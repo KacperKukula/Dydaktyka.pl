@@ -9,7 +9,7 @@ app.use(express.static("./public"))
 app.set("view engine", "ejs")
 
 app.get("/", (req, res)=>{
-    res.render("index.ejs")
+    res.render("index.ejs", {text: "Eurydyko"})
 })
 
-app.listen(port, ()=>{console.log("1")})
+app.listen(port)
