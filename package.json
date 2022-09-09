@@ -1,0 +1,23 @@
+{
+  "name": "dydaktyka.pl",
+  "version": "1.0.0",
+  "description": "This is website, where my mom can find her class materials for hole year of teaching. Includes:\r - Complete plan of teaching\r - Login into page\r - much more",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KacperKukula/Dydaktyka.pl.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KacperKukula/Dydaktyka.pl/issues"
+  },
+  "homepage": "https://github.com/KacperKukula/Dydaktyka.pl#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1"
+  }
+}
