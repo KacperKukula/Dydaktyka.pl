@@ -1,9 +1,9 @@
-const html = document.querySelector("html")
-console.log(html)
-const login = document.querySelector(".login-input-name")
-console.log(login)
-const passwd = document.querySelector(".login-input-passwd")
+const login = document.querySelector("input#login")
+const passwd = document.querySelector("input#passwd")
 
-login.addEventListener("focusout", (e)=>{
-    console.log("name :c")
-})
+login.addEventListener("focusout", ValidateInput())
+
+function ValidateInput() {
+    login.value.split("")
+    
+}
