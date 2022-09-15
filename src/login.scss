@@ -1,0 +1,66 @@
+@import "normalize";
+@import "fonts";
+
+:root {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+}
+body {
+    background: url("../resources/photos/triangle-mosaic.png");
+    width: 100vw;
+    height: 100vh;
+}
+.login {
+    width: 330px;
+    height: fit-content;
+    background-color: white;
+    padding: 60px 20px 70px 20px;
+    min-height: 200px;
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    margin: auto;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+    span {
+        margin: 15px 0 15px 0;
+    }
+    h1 {
+        margin: 15px 0 15px 0;
+    }
+    &-input-name, &-input-passwd {
+        width: 90%;
+        padding: 5px 5px 5px 12px;
+        border-radius: 20px;
+        border: 2px solid rgb(153, 153, 153);
+        transition: all 0.2s ease;
+    }
+    &-input-name, &-input-passwd:focus-visible {
+        border: 2px solid rgb(153, 153, 153);
+        outline: none;
+    }
+    &-submit {
+        height: 50px;
+        width: 50%;
+        margin-top: 30px;
+        border-radius: 30px;
+        box-sizing: border-box;
+        background-color: transparent;
+        border: 2px solid rgb(42, 42, 42);
+    }
+    &-submit:hover {
+        cursor: pointer;
+    }
+    &-error-passwd, &-error-name {
+        width: 100%;
+        text-align: left;
+        padding-left: 40px;
+        font-size: 0.8rem;
+        margin-top: 5px;
+        font-weight: 500;
+    }
+}
