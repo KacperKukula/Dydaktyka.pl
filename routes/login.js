@@ -2,7 +2,7 @@ const express = require("express")
 const router = express.Router()
 
 const mongoClient = require('mongodb').MongoClient
-const uri = 'mongodb://localhost:27017'
+const uri = 'mongodb+srv://application:OVkR5Z6FjPJIVI9Y@clusterdydaktyka.3lljaw9.mongodb.net/test'
 const dbname = 'Dydaktyka'
 
 const crypto = require('crypto');
@@ -14,6 +14,8 @@ const hash = crypto.createHmac("sha256", salt);
 router.post("/", (req, res) => {
     mongoClient.connect(uri, {}, (error, client) => {
         
+        if(error) res.send("Db problem")
+
         const name = req.body.login
         const passwd = hash.update(req.body.passwd).digest("hex");
         
@@ -25,7 +27,7 @@ router.post("/", (req, res) => {
             else
                 res.send("Task filed successfully <3 "+result[0].name)
 
-            console.log(result)
+            res.render("panel.ejs")
         })
     })
 })

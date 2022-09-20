@@ -13,8 +13,8 @@ app.get("/", (req, res)=>{
     res.render("login.ejs")
 })
 
-const userRouter = require('./routes/users.js')
+const loginRouter = require('./routes/login.js')
 
-app.use("/users", userRouter)
+app.use("/login", loginRouter)
 
 app.listen(port)
