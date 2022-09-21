@@ -53,7 +53,6 @@ passwd.addEventListener("focusout", (e)=>{
 })
 
 function CheckAccessToSend() {
-    alert(PasswdOK+" "+LoginOK)
     if(PasswdOK && LoginOK) {
         Submit.removeAttribute("disabled")
     }

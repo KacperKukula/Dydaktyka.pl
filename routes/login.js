@@ -22,7 +22,7 @@ router.post("/", (req, res) => {
             if(error) res.send("Db problem")
     
             const name = req.body.login
-            const passwd = "123"
+            const passwd = "d74d91494ae314949cfc67920d75d9b77bf3ddede0a4027bf5aab20c7e33fdfb"
             //hash.update(req.body.passwd).digest("hex");
             
             const db = client.db(dbname)
