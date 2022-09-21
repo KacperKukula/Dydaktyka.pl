@@ -12,24 +12,33 @@ const hash = crypto.createHmac("sha256", salt);
 //d74d91494ae314949cfc67920d75d9b77bf3ddede0a4027bf5aab20c7e33fdfb
 
 router.post("/", (req, res) => {
-    mongoClient.connect(uri, {}, (error, client) => {
+
+    //validation of inputs
+    if(!req.body.login || !req.body.passwd)
+        res.redirect("./")
+    else {
+        mongoClient.connect(uri, {}, (error, client) => {
         
-        if(error) res.send("Db problem")
-
-        const name = req.body.login
-        const passwd = hash.update(req.body.passwd).digest("hex");
-        
-        const db = client.db(dbname)
-
-        db.collection('users').find({}).toArray((error, result)=>{
-            if(error)
-                res.send("Błąd")
-            else
-                res.send("Task filed successfully <3 "+result[0].name)
-
-            res.render("panel.ejs")
+            if(error) res.send("Db problem")
+    
+            const name = req.body.login
+            const passwd = "123"
+            //hash.update(req.body.passwd).digest("hex");
+            
+            const db = client.db(dbname)
+    
+            db.collection('users').find({name: name, password: passwd}).toArray((error, result)=>{
+                if(error) {
+                    res.send("Błąd")
+                    return -1
+                }
+                if(result.length==0)
+                    res.send("Access denied")
+                else
+                res.render("panel.ejs")
+            })
         })
-    })
+    }
 })
 
 module.exports = router
