@@ -1,6 +1,8 @@
 @import "normalize";
 @import "fonts";
 
+$disabledButton: #c5c5c5;
+
 :root {
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
@@ -50,7 +52,8 @@ body {
         border-radius: 30px;
         box-sizing: border-box;
         background-color: transparent;
-        border: 2px solid #c5c5c5;
+        border: 2px solid $disabledButton;
+        color: $disabledButton;
     }
     &-submit:hover {
         cursor: pointer;

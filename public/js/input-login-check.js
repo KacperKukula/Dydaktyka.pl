@@ -4,6 +4,8 @@ const errorLogin = document.querySelector(".login-error-name")
 const errorPasswd = document.querySelector(".login-error-passwd")
 const Submit = document.querySelector("input.login-submit")
 
+const disabledButtonColor = Submit.style.color
+
 let PasswdOK = false, LoginOK = false
 
 let ForbiddenSigns = [":", ";", " ", "-", "=", "+", "{", "}", "[", "]", "/", "\\", "|", "*", "@", "~"]
@@ -55,9 +57,12 @@ passwd.addEventListener("focusout", (e)=>{
 function CheckAccessToSend() {
     if(PasswdOK && LoginOK) {
         Submit.removeAttribute("disabled")
+        Submit.style.color = "black"
+        Submit.style.borderColor = "black"
     }
     else {
         Submit.setAttribute('disabled', 'disabled')
-        Submit.style.borderColor = "#c5c5c5"
+        Submit.style.borderColor = disabledButtonColor
+        Submit.style.color = disabledButtonColor
     }
 }
